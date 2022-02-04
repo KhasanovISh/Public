@@ -4,9 +4,7 @@ authors:
   - family-names: Khasanov
     given-names: Ildus
     orcid: https://orcid.org/0000-0001-9876-0769
-title: "My Research Software"
+title: "Source code"
 version: 0.0.0
 doi: 
 date-released: 2022-01-10
-
-Khasanov, I. Sh. (2022). Source code. https://github.com/KhasanovISh/Public
