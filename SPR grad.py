@@ -5,23 +5,25 @@ Created on Wed Feb  8 16:31:08 2023
 @author: Leon
 """
 
+# local imports
 import sys
 sys.path.append('E:\Python\SPPPy (1)')
-
 from SPPPy import ExperimentSPR, Layer, MaterialDispersion, plot_graph
 
+# general imports
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 from Helper2 import horizontal_slice_image, running_mean, hdr2
 
+# imports packages for optimization problem
 from scipy.optimize import minimize, minimize_scalar
 from functools import partial
 import seaborn as sns
 import pybobyqa
 
-
+# UNITS
 nm = 1e-9
 um = 1e-6
 
