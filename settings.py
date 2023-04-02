@@ -7,6 +7,8 @@ Created on Sat Apr  1 22:02:24 2023
 
 # __all__ = ['PublicClass']
 
+IMAGE_DPI = 400
+
 FUNCTION_STYLES = ["r--","g--","b--","k--"]
 FUNCTION_LABELS = ["1","2","3","4"]
 
@@ -15,3 +17,11 @@ FUNCTIONS = [lambda x: x*0+1.65476709,
               lambda x: -0.16717102 *x*x  +1.70482002,
               lambda x: -0.0722967 *x*x*x + 1.67035575
               ]
+
+WAVELENGTH_LABEL = "Длина волны λ, нм"
+RESONANCE_ANGLE_LABEL = "Резонансный угол θ, $^{o}$"
+
+EXPERIMENTAL_POINTS_LABEL = "0"
+EXPERIMENTAL_POINTS_STYLE = "ko"
+EXPEIMENTAL_ERRORBAR_COLOR = "k"
+

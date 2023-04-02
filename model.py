@@ -13,8 +13,10 @@ from optics import *
 
 # general imports
 from pathlib import Path
+import os
 
 import numpy as np
+import matplotlib.pyplot as plt
 # from PIL import Image
 # from Helper2 import horizontal_slice_image, running_mean, hdr2
 
@@ -67,16 +69,20 @@ def get_spectral_angle_curve(folder):
     for number in numbers:
         wavelengths.append(get_wavelength(folder, number))
         path = folder.joinpath(f"{number}_experiment_exposure_{exposure}.npy")
-        image = np.load(path)[:,:,0]
+        image = np.load(path) #[:,:,0]
+        # np.save(path, image)
         start = 200
         curve = image[700][start:1100]
         positions.append(np.mean(np.where(curve == np.min(curve))[0]+start))
+        # plt.plot(np.arange(len(curve)),curve)
+    # plt.show()
+    # plt.plot(wavelengths, positions)
     return numbers, wavelengths, positions
 
 def experimental_gradient_SPR():
-    asbolute_path = r"E:\Experiments\2022-12-17"
+    asbolute_path = os.path.join(os.path.dirname(__file__),"data")
     folders = ['Au 2 0nm', 
-               'Au 2 grad']
+                'Au 2 grad']
     
     
     folder = Path(asbolute_path).joinpath(folders[0])
@@ -109,3 +115,18 @@ def experimental_gradient_SPR():
     # plt.show()
     print("Измерения")
     return mes_grad_wavelengths, m*mes_grad_positions + c
+
+
+def get_SPR_minima_gradient2(wavelength_nm, d_nm = 0, gradient_func = None):
+    AuSPR = setup_AuSPR_theoretical(wavelength_nm, d_nm= d_nm, n= 1)
+    bnds = (AuSPR.TIR(),60)
+    AuSPR.layers[2] = Layer(lambda x: gradient_func(x), d_nm*nm)
+    # angles = np.linspace(AuSPR.TIR(),60,1000)
+    get_R = lambda x: AuSPR.R(angles=[x])[0]
+    res = minimize_scalar(get_R,
+                    method='bounded', bounds=bnds)
+    return res.x
+
+def get_TIR():
+    AuSPR = setup_AuSPR_theoretical(600, d_nm= 0, n= 1)
+    return AuSPR.TIR()
