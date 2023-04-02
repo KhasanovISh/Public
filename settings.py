@@ -5,7 +5,7 @@ Created on Sat Apr  1 22:02:24 2023
 @author: Leon
 """
 
-# __all__ = ['PublicClass']
+
 
 IMAGE_DPI = 400
 
@@ -23,5 +23,5 @@ RESONANCE_ANGLE_LABEL = "Резонансный угол θ, $^{o}$"
 
 EXPERIMENTAL_POINTS_LABEL = "0"
 EXPERIMENTAL_POINTS_STYLE = "ko"
-EXPEIMENTAL_ERRORBAR_COLOR = "k"
+EXPERIMENTAL_ERRORBAR_COLOR = "k"
 

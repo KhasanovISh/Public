@@ -25,26 +25,23 @@ def get_BK7_RI(wavelength_nm):
 def get_air_RI(wavelength_nm):
     return 1
 
+def get_ethanol_RI(wavelength_nm):
+    x = wavelength_nm/1000
+    # n = get_LK7_RI(wavelength_nm)
+    # n=1.35265+0.00306*x**-2+0.00002*x**-4
+    # n=1.294611+12706.403E-6*x**-2
+    n = 1.5
+    # n = n=(1+0.75831/(1-0.01007/x**2)+0.08495/(1-8.91377/x**2))**.5
+    return n
 
+def get_ZrO2_RI(wavelength_nm):
+    x = wavelength_nm/1000
+    return (1+1.347091/(1-(0.062543/x)**2)+2.117788/(1-(0.166739/x)**2)+9.452943/(1-(24.320570/x)**2))**.5
 
-# def get_linear(x):
-#     return 1.5 - 0.5*x
+def get_TiO2_RI(wavelength_nm):
+    x = wavelength_nm/1000
+    return (5.913+0.2441/(x**2-0.0803))**.5
 
-# def get_glass_RI(wavelength_nm, filename):
-#     glass_dispersion = np.genfromtxt(filename)
-#     glass_wl, glass_n = list(zip(*glass_dispersion))
-#     return np.interp(wavelength_nm/1000, glass_wl, glass_n)
-
-# def get_prism_RI(wavelength_nm):
-#     x = wavelength_nm/1000
-#     # n=(1+3.00+1.90/(1-0.113/x**2))**.5
-#     # n = 1
-#     n=(1+1.03961212/(1-0.00600069867/x**2)+0.231792344/(1-0.0200179144/x**2)+1.01046945/(1-103.560653/x**2))**.5
-#     return n
-
-# def get_medium_RI(wavelength_nm):
-#     x = wavelength_nm/1000
-#     # n= 1.386820+17856.021E-6*x**-2
-#     # n = 1.9
-#     n = 1
-#     return n
+def get_SiO2_RI(wavelength_nm):
+    x = wavelength_nm/1000
+    return (1+0.6961663/(1-(0.0684043/x)**2)+0.4079426/(1-(0.1162414/x)**2)+0.8974794/(1-(9.896161/x)**2))**.5

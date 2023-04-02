@@ -9,6 +9,13 @@ import os
 from joblib import Memory
 import zipfile
 from tqdm import tqdm
+import requests
+import os
+import errno
+import subprocess
+import numpy as np
+
+# __all__ = ['PublicClass']
 
 def memoize_to_file():
     mem = Memory('cached_data')
@@ -45,3 +52,37 @@ def unzip_file(file_path: str, extract_path: str) -> None:
                 # print(f"Extracting {file} ({index+1}/{len(file_list)})")
                 zip_ref.extract(file, extract_path)
             print("Extraction completed.")
+            
+
+def download_figshare_zip(url, output_file):
+    if os.path.isfile(output_file):
+        print(f"File {output_file} already exists!")
+        return
+    else:
+        response = requests.get(url, stream=True)
+        total_size_in_bytes = int(response.headers.get('content-length', 0))
+        block_size = 1024 # 1 Kibibyte
+        progress_bar = tqdm(total=total_size_in_bytes, unit='iB', unit_scale=True)
+        
+        with open(output_file, 'wb') as f:
+            for data in response.iter_content(block_size):
+                progress_bar.update(len(data))
+                f.write(data)
+                
+        progress_bar.close()
+        if total_size_in_bytes != 0 and progress_bar.n != total_size_in_bytes:
+            print("ERROR: Download incomplete.")
+            
+def get_files_with_extension(folder_path, extension):
+    file_list = []
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith(extension):
+            file_list.append(os.path.join(folder_path, file_name))
+    return file_list
+
+
+
+def resave_channel_3to1(path):
+    files = get_files_with_extension(path, ".npy")
+    for file in tqdm(files):
+        np.save(file, np.load(file)[:,:,0])
