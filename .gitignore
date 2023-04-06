@@ -9,6 +9,7 @@ try2.py
 # Calculated and experimental data
 cached_data/
 data/
+share/
 
 #Virtual Environment
 Scripts/
