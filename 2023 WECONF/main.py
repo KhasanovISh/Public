@@ -19,5 +19,5 @@ if __name__ == '__main__':
     data_path = os.path.join(os.path.dirname(__file__),"data.zip")
     dest_path = os.path.join(os.path.dirname(__file__),"data")
     unzip_file(data_path, dest_path)
-    # plot_and_save_figure_dry_measurement() # Figure 2a
+    plot_and_save_figure_dry_measurement() # Figure 2a
     plot_and_save_figure_wet_measurement() # Figure 2b

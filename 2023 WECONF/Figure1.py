@@ -40,19 +40,26 @@ def plot_and_save_figure_dry_measurement():
     savefig("dry_measurement")
     plt.show()
     
-    for i, thetas in enumerate(thetas_func):
-        plt.xlabel(WAVELENGTH_LABEL)
-        plt.ylabel(REFLECTIVITY_LABEL)
-        min_r = []
-        for j, theta in enumerate(thetas):
-            gradSPR = setup_SPR_unit(wavelengths2[j], 220, FUNCTIONS[i])
-            min_r.append(gradSPR.R(angles = [theta])[0])
-        plt.plot(wavelengths2, min_r,
-                 FUNCTION_STYLES[i],
-                 label = FUNCTION_LABELS[i])
-    plt.legend()
-    plt.show()
+    # #b---
+    # #analysis of what resonance minima look like at a particular wavelength
+    # #b---
+    # for i, thetas in enumerate(thetas_func):
+    #     plt.xlabel(WAVELENGTH_LABEL)
+    #     plt.ylabel(REFLECTIVITY_LABEL)
+    #     min_r = []
+    #     for j, theta in enumerate(thetas):
+    #         gradSPR = setup_SPR_unit(wavelengths2[j], 220, FUNCTIONS[i])
+    #         min_r.append(gradSPR.R(angles = [theta])[0])
+    #     plt.plot(wavelengths2, min_r,
+    #              FUNCTION_STYLES[i],
+    #              label = FUNCTION_LABELS[i])
+    # plt.legend()
+    # plt.show()
+    # #b---
     
+    # #a---
+    # #analysis of what resonance curves look like at a particular wavelength
+    # #a---
     # angle_range = np.linspace(0,90,300)
     # for wavelength in [633]:
     #     plt.xlabel(ANGLE_LABEL)
@@ -63,3 +70,4 @@ def plot_and_save_figure_dry_measurement():
     #         plt.plot(angle_range, gradSPR.R(angles = angle_range), FUNCTION_STYLES[i], label = FUNCTION_LABELS[i])
     #     plt.legend()
     #     plt.show()
+    # #a---
