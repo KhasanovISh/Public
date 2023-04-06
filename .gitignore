@@ -1,11 +1,18 @@
 # Images
 *.jpg
 *.png
-try.py
 
-# Calculated data cache
+# Miscellaneous files
+try.py
+try2.py
+
+# Calculated and experimental data
 cached_data/
 data/
+
+#Virtual Environment
+Scripts/
+Lib/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

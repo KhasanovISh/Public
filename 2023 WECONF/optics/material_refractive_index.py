@@ -30,9 +30,23 @@ def get_ethanol_RI(wavelength_nm):
     # n = get_LK7_RI(wavelength_nm)
     # n=1.35265+0.00306*x**-2+0.00002*x**-4
     # n=1.294611+12706.403E-6*x**-2
-    n = 1.5
+    # n=1.384715+4960.733E-6*x**-2 # Butanol
+    n= 1.47797+0.00598*x**-2-0.00036*x**-4
+    # n = 1.4298
+    # n = 1.5
     # n = n=(1+0.75831/(1-0.01007/x**2)+0.08495/(1-8.91377/x**2))**.5
     return n
+
+def get_RI_by_name(wavelength_nm, name):
+    materials = {
+        "Glycerol": lambda x: 1.45797+0.00598*x**-2-0.00036*x**-4,
+        "Ethanol": lambda x: 1.35265+0.00306*x**-2+0.00002*x**-4,
+        "Benzyl": lambda x: 0*x + 1.54049
+        }
+    if name in materials:
+        x = wavelength_nm/1000
+        n = materials[name](x)
+        return n
 
 def get_ZrO2_RI(wavelength_nm):
     x = wavelength_nm/1000

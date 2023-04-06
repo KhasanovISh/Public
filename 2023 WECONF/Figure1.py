@@ -20,7 +20,6 @@ def plot_and_save_figure_dry_measurement():
     plt.plot(wavelengths, angles, 
               EXPERIMENTAL_POINTS_STYLE, 
               label = EXPERIMENTAL_POINTS_LABEL)
-    # plt.show()
     wavelengths2 = np.linspace(590,670,10)
     thetas_func = calculate_optmization_data(wavelengths2, angles, 
                                              get_SPR_minima_gradient_dry)
@@ -39,5 +38,28 @@ def plot_and_save_figure_dry_measurement():
     plt.legend()
     
     savefig("dry_measurement")
-    
     plt.show()
+    
+    for i, thetas in enumerate(thetas_func):
+        plt.xlabel(WAVELENGTH_LABEL)
+        plt.ylabel(REFLECTIVITY_LABEL)
+        min_r = []
+        for j, theta in enumerate(thetas):
+            gradSPR = setup_SPR_unit(wavelengths2[j], 220, FUNCTIONS[i])
+            min_r.append(gradSPR.R(angles = [theta])[0])
+        plt.plot(wavelengths2, min_r,
+                 FUNCTION_STYLES[i],
+                 label = FUNCTION_LABELS[i])
+    plt.legend()
+    plt.show()
+    
+    # angle_range = np.linspace(0,90,300)
+    # for wavelength in [633]:
+    #     plt.xlabel(ANGLE_LABEL)
+    #     plt.ylabel(REFLECTIVITY_LABEL)
+    #     plt.title(wavelength)
+    #     for i, func in enumerate(FUNCTIONS):
+    #         gradSPR = setup_SPR_unit(wavelength, 220, func)
+    #         plt.plot(angle_range, gradSPR.R(angles = angle_range), FUNCTION_STYLES[i], label = FUNCTION_LABELS[i])
+    #     plt.legend()
+    #     plt.show()

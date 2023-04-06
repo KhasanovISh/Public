@@ -128,23 +128,40 @@ def minimize_unit(SPR_unit, upper_limit):
                     method='bounded', bounds=bnds)
     return res.x
 
+def minimize_unit_unbounded(SPR_unit):
+    bnds = (0, 90)
+    get_R = lambda x: SPR_unit.R(angles=[x])[0]
+    res = minimize_scalar(get_R,
+                    method='bounded', bounds=bnds)
+    return res.x
+
 def setup_SPR_unit(wavelength_nm, d_nm = 0, gradient_func = None):
     AuSPR = setup_AuSPR_theoretical(wavelength_nm, d_nm= d_nm, n= 1)
     AuSPR.layers[2] = Layer(lambda x: gradient_func(x), d_nm*nm)
+    return AuSPR
+
+def setup_SPR_unit_wet(wavelength_nm, d_nm = 0, gradient_func = None):
+    AuSPR = setup_SPR_unit(wavelength_nm, d_nm, gradient_func)
+    AuSPR.layers[3] = Layer(get_RI_by_name(wavelength_nm, "Ethanol"), 100)
     return AuSPR
 
 def get_SPR_minima_gradient_dry(wavelength_nm, d_nm = 0, gradient_func = None):
     AuSPR = setup_SPR_unit(wavelength_nm, d_nm, gradient_func)
     return minimize_unit(AuSPR, 60)
 
+def get_SPR_minima_gradient_dry_all(wavelength_nm, d_nm = 0, gradient_func = None):
+    AuSPR = setup_SPR_unit(wavelength_nm, d_nm, gradient_func)
+    return minimize_unit_unbounded(AuSPR)
+
+def get_SPR_minima_gradient_wet_all(wavelength_nm, d_nm = 0, gradient_func = None):
+    AuSPR = setup_SPR_unit_wet(wavelength_nm, d_nm, gradient_func)
+    return minimize_unit_unbounded(AuSPR)
+
 def get_SPR_minima_gradient_wet(wavelength_nm, d_nm = 0, gradient_func = None):
-    AuSPR = setup_SPR_unit(wavelength_nm, d_nm, gradient_func)    
-    AuSPR.layers[3] = Layer(get_SiO2_RI(wavelength_nm), 150*nm)
-    AuSPR.add(Layer(1, 1))
-    # angles = np.linspace(40, 90, 100)
-    # plt.plot(angles, AuSPR.R(angles=angles))
-    # plt.show()
+    AuSPR = setup_SPR_unit_wet(wavelength_nm, d_nm, gradient_func)    
     return minimize_unit(AuSPR, 90)
+
+
 
 def get_TIR():
     AuSPR = setup_AuSPR_theoretical(600, d_nm= 0, n= 1)
@@ -153,6 +170,8 @@ def get_TIR():
 @memoize_to_file()
 def calculate_data():
     return experimental_gradient_SPR()
+
+
 
 # @memoize_to_file()
 def calculate_optmization_data(wls, ths, func):
@@ -165,7 +184,7 @@ def calculate_optmization_data(wls, ths, func):
             thetas.append(func(wl, 220, FUNCTIONS[N]))
         plt.show()
         thetas = np.array(thetas)
-        thetas[thetas <= TIR+0.1] = None
+        # thetas[thetas <= TIR+0.1] = None
         thetas_func.append(thetas)
     return thetas_func
 

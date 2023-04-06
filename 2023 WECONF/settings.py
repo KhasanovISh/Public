@@ -20,6 +20,8 @@ FUNCTIONS = [lambda x: x*0+1.65476709,
 
 WAVELENGTH_LABEL = "Длина волны λ, нм"
 RESONANCE_ANGLE_LABEL = "Резонансный угол θ, $^{o}$"
+ANGLE_LABEL = "углы θ, $^{o}$"
+REFLECTIVITY_LABEL = "Коэф-т отражения $R_p$"
 
 EXPERIMENTAL_POINTS_LABEL = "0"
 EXPERIMENTAL_POINTS_STYLE = "ko"
