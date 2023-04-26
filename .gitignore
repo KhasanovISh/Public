@@ -2,6 +2,9 @@
 *.jpg
 *.png
 
+#Data
+*.xlsx
+
 # Miscellaneous files
 try.py
 try2.py
