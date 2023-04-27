@@ -3,14 +3,18 @@
 This repository contains source code for various calculations published in scientific journals over the years. The source code is organized by publication date, with each publication's calculations residing in a separate subdirectory. My goal is to support open science and increase the transparency and reproducibility of research.
 
 ## About author
-Ildus Khasanov
-Position: Seniuor Researcher (2014-present)
-Workplace: Scientific and Technological Centre of Unique Instrumentation of the Russian Academy of Sciences
-Laboratory of Terahertz and Infrared Optics
-E-mail: khasanov@ntcup.ru
-ORCID: 0000-0001-9876-0769
-ScopusAuthorID: 55657338600
-WoSResearcherID: M-3497-2016
+**Ildus Khasanov**
+
+||                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------ |
+| Position        | Seniuor Researcher (2014-present)                                                                |
+| Workplace       | Scientific and Technological Centre of Unique Instrumentation of the Russian Academy of Sciences |
+|                 | Laboratory of Terahertz and Infrared Optics                                                      |
+| E-mail          | khasanov@ntcup.ru                                                                                |
+| ORCID           | 0000-0001-9876-0769                                                                              |
+| ScopusAuthorID  | 55657338600                                                                                      |
+| WoSResearcherID | M-3497-2016                                                                                      |
+
 
 ## Repository Contents
 The repository contains the following files and directories:
