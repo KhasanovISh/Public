@@ -26,8 +26,8 @@ yyyy/publication/: A subdirectory for each publication in (journal or conference
 -  [code](2022/Surface%20Investigation/README.md) for article "Diagnostics of Thin Gradient Dielectric Coatings by Surface Plasmon Resonance Microscopy and Ghost Imaging" published in Surface Investigation [DOI: 10.1134/S1027451022050068](https://doi.org/10.1134/S1027451022050068)
 
 ### 2023
-- [code](2023/Materials/README.md) for article "Optical Characterization of Thin Films︎ by Surface Plasmon Resonance Spectroscopy Using an Acousto-Optic Tunable Filter" published in Materials [DOI:10.3390/ma16051820](https://www.mdpi.com/1996-1944/16/5/1820)
-- [code](2023/Surface_Investigation/README.md) for article "Observation of surface plasmon resonance in monochromatic terahertz radiation on Indium antimonide" to be published in Surface Investigation [DOI:10.3390/ma16051820](https://www.mdpi.com/1996-1944/16/5/1820)
+- [code](2023/Materials/README.md) for the article "Optical Characterization of Thin Films︎ by Surface Plasmon Resonance Spectroscopy Using an Acousto-Optic Tunable Filter" published in Materials [DOI:10.3390/ma16051820](https://www.mdpi.com/1996-1944/16/5/1820)
+- [code](2023/Surface_Investigation/README.md) for the article "Observation of surface plasmon resonance in monochromatic terahertz radiation on Indium antimonide" to be published in Surface Investigation [DOI:10.3390/ma16051820](https://www.mdpi.com/1996-1944/16/5/1820)
 - [code](2023/WECONF/README.md) for the report "Optical profile reconstruction of thin gradient films by polynomial approximation using surface plasmon resonance spectroscopy based on an acousto-optical tunable filter" to be presented at the conference [WECONF-2023](https://weconf-guap.ru/en/)
 
 ## Usage
