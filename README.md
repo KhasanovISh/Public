@@ -8,12 +8,12 @@ This repository contains source code for various calculations published in scien
 ||                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------ |
 | Position        | Seniuor Researcher (2014-present)                                                                |
-| Workplace       | Scientific and Technological Centre of Unique Instrumentation of the Russian Academy of Sciences |
-|                 | Laboratory of Terahertz and Infrared Optics                                                      |
+| Workplace       | [Scientific and Technological Centre of Unique Instrumentation of the Russian Academy of Sciences](https://ntcup.ru/)  |
+|                 | Laboratory of Terahertz and Infrared Optics                                                     |
 | E-mail          | khasanov@ntcup.ru                                                                                |
-| ORCID           | 0000-0001-9876-0769                                                                              |
-| ScopusAuthorID  | 55657338600                                                                                      |
-| WoSResearcherID | M-3497-2016                                                                                      |
+| ORCID           | [0000-0001-9876-0769](https://orcid.org/0000-0001-9876-0769)                                                                              |
+| ScopusAuthorID  | [55657338600](https://www.scopus.com/authid/detail.uri?authorId=55657338600)                                                                                      |
+| WoSResearcherID | [M-3497-2016](https://www.webofscience.com/wos/author/record/M-3497-2016)                                                                                      |
 
 
 ## Repository Contents
