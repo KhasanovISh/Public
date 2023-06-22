@@ -1,6 +1,6 @@
 # Source code for Figures in Photonics 2023
 
-This repository provides the source code for reproducing Figures 4 and 6 presented in the scientific article "First experimental demonstration of the wide-field amplitude surface plasmon microscopy in the terahertz range" by Vasiliy Valerievich Gerasimov, Oleg Eduardovich Kameshkov, Alexey Konstantinovich Nikitin, Ildus Shevketovich Khasanov, Alexey Georgievich Lemzyakov, Irina Veniaminovna Antonova,, Artem Ilyich Ivanov, Nghiem Thi Ha Lien, Nguyen Trong Nghia, Le Tu Anh, Nguyen Quoc Hung  and Ta Thu Trang, published in Photonics on June 21, 2023.
+This repository provides the source code for reproducing Figures 4 and 6 presented in the scientific article "First experimental demonstration of the wide-field amplitude surface plasmon microscopy in the terahertz range" by Vasiliy Valerievich Gerasimov, Oleg Eduardovich Kameshkov, Alexey Konstantinovich Nikitin, Ildus Shevketovich Khasanov, Alexey Georgievich Lemzyakov, Irina Veniaminovna Antonova, Artem Ilyich Ivanov, Nghiem Thi Ha Lien, Nguyen Trong Nghia, Le Tu Anh, Nguyen Quoc Hung  and Ta Thu Trang, published in Photonics on June 21, 2023.
 
 ## Prerequisites
 
